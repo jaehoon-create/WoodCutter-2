@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: b2d35213fa2ffb24f86f3d7f573dd09f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Avengeance Heroic Avenger
+  fontNames:
+  - Avengeance Heroic Avenger
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 155488c3dd6114841ac1f8750e42419f, type: 3}
+  - {fileID: 12800000, guid: 99a2f7c7205ef0d41b9f757598387fa4, type: 3}
+  - {fileID: 12800000, guid: 4bf3af4b8fca5314496cd42b2b9fe3ed, type: 3}
+  - {fileID: 12800000, guid: b1a8e0dbc98c4ee4a934c42bb15438da, type: 3}
+  - {fileID: 12800000, guid: 22a5e3fe0d22bdf4bae63bec037ae57a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

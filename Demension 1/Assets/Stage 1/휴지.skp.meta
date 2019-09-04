@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 2a84859630c825747ba10a5d58f07e50
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 1adc38b3c2a174cd72dfaae5af37418d
+  longitude: 8.167453070388287
+  latitude: 49.4639972963257
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -2.3964336, y: 6.265027, z: -1.4924424}
+      lookAt: {x: 2.159769, y: -12.003629, z: -0.08264395}
+      up: {x: 0.92433274, y: 0.25260013, z: 0.28601074}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Group 1
+    100002: Group 8
+    100004: Klosje
+    100006: Klosje 1
+    100008: Toiletrolhouder
+    100010: //RootNode
+    400000: Group 1
+    400002: Group 8
+    400004: Klosje
+    400006: Klosje 1
+    400008: Toiletrolhouder
+    400010: //RootNode
+    2100000: _11
+    2100002: _7
+    2100004: _8
+    2100006: '[Metal_Aluminum_Anodized]2'
+    2100008: watercolor
+    2100010: Fabric-D'OroSuede
+    2100012: k3540028
+    2300000: Group 8
+    2300002: Klosje
+    2300004: Klosje 1
+    2300006: Toiletrolhouder
+    3300000: Group 8
+    3300002: Klosje
+    3300004: Klosje 1
+    3300006: Toiletrolhouder
+    4300000: Mesh Toiletrolhouder
+    4300002: Mesh Klosje
+    4300004: Mesh Group 8
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
