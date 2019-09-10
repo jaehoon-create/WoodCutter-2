@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 처음에 이벤트의 종류를 나타내는 class.
-public class Event
+public class Event2
 { // 이벤트 종류.
+    internal static object current;
+
     public enum TYPE
     {
         NONE = -1, // 없음.
@@ -16,21 +18,20 @@ public class Event
 
 
 public class EventRoot : MonoBehaviour {
-    public Event.TYPE getEventType(GameObject event_go)
+    public Event2.TYPE getEventType(GameObject event_go)
     {
-        Event.TYPE type = Event.TYPE.NONE;
+        Event2.TYPE type = Event2.TYPE.NONE;
         if (event_go != null)
         { // 인수의 GameObject가 비어있지 않으면.
             if (event_go.tag == "Rocket")
             {
-                type = Event.TYPE.ROCKET;
+                type = Event2.TYPE.ROCKET;
             }
         }
         return (type);
     }
     // Use this for initialization
     void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -42,7 +43,7 @@ public class EventRoot : MonoBehaviour {
     public bool isEventIgnitable(Item.TYPE carried_item, GameObject event_go)
     {
         bool ret = false;
-        Event.TYPE type = Event.TYPE.NONE;
+        Event2.TYPE type = Event2.TYPE.NONE;
         if (event_go != null)
         {
             type = this.getEventType(event_go); // 이벤트 타입을 구한다.
@@ -50,7 +51,7 @@ public class EventRoot : MonoBehaviour {
 
         switch (type)
         {
-            case Event.TYPE.ROCKET:
+            case Event2.TYPE.ROCKET:
                 if (carried_item == Item.TYPE.IRON)
                 { // 가지고 있는 것이 철광석이라면.
                     ret = true; // '이벤트할 수 있어요！'라고 응답한다.
@@ -63,14 +64,14 @@ public class EventRoot : MonoBehaviour {
     public string getIgnitableMessage(GameObject event_go)
     {
         string message = "";
-        Event.TYPE type = Event.TYPE.NONE;
+        Event2.TYPE type = Event2.TYPE.NONE;
         if (event_go != null)
         {
             type = this.getEventType(event_go);
         }
         switch (type)
         {
-            case Event.TYPE.ROCKET:
+            case Event2.TYPE.ROCKET:
                 message = "정화한다";
                 break;
         }

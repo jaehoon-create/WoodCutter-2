@@ -12,6 +12,7 @@ TagManager:
   - Zombie
   - 'Stage 1 '
   - GameRoot
+  - Item Database
   layers:
   - Default
   - TransparentFX

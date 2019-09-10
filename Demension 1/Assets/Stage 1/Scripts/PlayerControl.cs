@@ -97,11 +97,11 @@ public class PlayerControl : MonoBehaviour
                                 break; // 아무 것도 하지 않는다.
                             }
                             // 이벤트 종류를 가져온다.
-                            Event.TYPE ignitable_event =
+                            Event2.TYPE ignitable_event =
                             this.event_root.getEventType(this.closest_event);
                             switch (ignitable_event)
                             {
-                                case Event.TYPE.ROCKET: // 이벤트의 종류가 ROCKET이면.
+                                case Event2.TYPE.ROCKET: // 이벤트의 종류가 ROCKET이면.
                                                         // REPAIRING(수리) 상태로 이행.
                                     this.next_step = STEP.REPAIRING;
                                     break;
