@@ -37,7 +37,7 @@ public class Gage : MonoBehaviour
     {
         if (TimeControl.instance.GameActive)
         {
-            gage.value -= Time.deltaTime * 0.03f;
+            gage.value -= Time.deltaTime * 0.003f;
 
             if (gage.value < 0.1f)
             {

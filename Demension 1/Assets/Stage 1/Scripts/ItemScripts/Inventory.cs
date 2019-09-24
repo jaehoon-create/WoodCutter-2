@@ -41,10 +41,10 @@ public class Inventory : MonoBehaviour
         // 디비 변수에 "Item Database" 태그를 가진 오브젝트를 연결합니다.
         // 그리고 그 중 가져오는 컴포넌트는 "itemDatabse"라는 속성입니다.
 
-        AddItem(1001);
+       // AddItem(1001);
         // 아이템ID를 호출하도록 한다.
-        AddItem(1011);
-        AddItem(1001);
+      //  AddItem(1011);
+      //  AddItem(1001);
         // 테스트용 명령어
         AddItem(4001);
         // 물약 추가하기
@@ -59,9 +59,11 @@ public class Inventory : MonoBehaviour
             // showInventory 앞에 느낌표는 낫(Not)연산자이며, 참>거짓, 거짓>참으로 바꿔주는 연산자입니다.
             // 누를때마다 참>거짓>참>거짓으로 바뀌겠죠
         }
+        //showInventory = true;
     }
     void OnGUI()
     {
+
         tooltip = "";
         GUI.skin = skin;
         // Skin 을 skin 답게 ' ㅅ'
@@ -91,7 +93,7 @@ public class Inventory : MonoBehaviour
 
             for (int i = 0; i < slotX; i++)
             {
-                Rect slotRect = new Rect(i * 52 + 100, j * 52 + 30, 50, 50);
+                Rect slotRect = new Rect(i * 52 + 100, j * 52 + 530, 50, 50);
                 // 박스 분할하기
                 GUI.Box(slotRect, "", skin.GetStyle("slot background"));
                 // 각 박스의 생성 위치를 설정해주는 곳입니다. skin.GetStyle은 이전에 만들었던 skin을 불러오는 것임

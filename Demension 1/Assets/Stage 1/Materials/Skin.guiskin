@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_CustomStyles:
   - m_Name: slot background
     m_Normal:
-      m_Background: {fileID: 2800000, guid: 150104235000cd44788eb8af49dc4d59, type: 3}
+      m_Background: {fileID: 2800000, guid: 2b2c5c7965e4d4f40ad5533832d6408d, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
