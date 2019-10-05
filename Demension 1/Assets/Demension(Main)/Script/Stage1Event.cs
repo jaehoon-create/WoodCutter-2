@@ -50,13 +50,6 @@ public class Stage1Event : MonoBehaviour {
             
         }                   
     }
-    //private void OnTriggerEnter(Collider col)//스테이지 1로 진입
-    //{
-    //    if(col.tag == "Apple")
-    //    {
-    //        SceneManager.LoadScene(2);
-    //    }
-    //}
 
     private void SetOffImage()
     {

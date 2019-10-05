@@ -236,8 +236,8 @@ public class PlayerControl : MonoBehaviour
                 Title_effect.Auudio();
                 break;
             case STEP.REPAIRING:
-                GUI.Label(new Rect(x, y, 200.0f, 20.0f), "정화중...",
-                guistyle);
+                //GUI.Label(new Rect(x, y, 200.0f, 20.0f), "정화중...",
+              //  guistyle);
                 break;
         }
         if (this.is_event_ignitable())
