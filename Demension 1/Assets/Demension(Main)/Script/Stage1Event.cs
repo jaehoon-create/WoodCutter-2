@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Stage1Event : MonoBehaviour {
     
     public GameObject Player;
-
     public GameObject[] ImageArray = new GameObject[8];
     public GameObject GuideImage;
 
@@ -45,9 +44,8 @@ public class Stage1Event : MonoBehaviour {
             {
                 ImageArray[ImageArrayNum].SetActive(false);
                 GuideImage.SetActive(false);
+                Player.GetComponent<Player>().enabled = true;
             }
-            Player.GetComponent<Player>().enabled = true;
-            
         }                   
     }
 

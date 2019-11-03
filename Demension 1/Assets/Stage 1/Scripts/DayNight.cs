@@ -20,6 +20,7 @@ public class DayNight : MonoBehaviour
             isNight = true;
         else if (transform.eulerAngles.x <= 10)
             isNight = false;
+
         if (isNight)
         {
             if (currentFogDensity <= nightFogDensity)

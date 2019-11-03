@@ -72,7 +72,7 @@ public class EventRoot : MonoBehaviour {
         switch (type)
         {
             case Event2.TYPE.ROCKET:
-                message = "정화한다";
+                message = "굽는다";
                 break;
         }
         return (message);

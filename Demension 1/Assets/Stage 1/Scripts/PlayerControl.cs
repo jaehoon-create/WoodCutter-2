@@ -204,7 +204,7 @@ public class PlayerControl : MonoBehaviour
         float y = Screen.height - 40.0f;
         if (this.carried_item != null)
         {
-            GUI.Label(new Rect(x, y, 200.0f, 20.0f), "Z:버린다", guistyle);
+            GUI.Label(new Rect(x, y, 200.0f, 20.0f), ".", guistyle);
             do
             {
                 if (this.is_event_ignitable())

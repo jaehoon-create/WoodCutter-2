@@ -35,7 +35,7 @@ public class ItemRoot : MonoBehaviour
     public float Image_timer = 0.0f;
     public static float RESPAWN_TIME_APPLE = 7.5f;
     public static float RESPAWN_TIME_IRON = 8.0f;
-    public static float RESPAWN_TIME_PLANT = 13.0f;
+    public static float RESPAWN_TIME_PLANT = 100.0f;
     private float respawn_timer_apple = 0.0f; // 사과의 출현 시간.
     private float respawn_timer_iron = 0.0f; // 열매의 출현 시간.
     private float respawn_timer_plant = 0.0f; // 식물의 출현 시간.
@@ -176,9 +176,9 @@ public class ItemRoot : MonoBehaviour
         // 사과의 출현 포인트를 취득.
         Vector3 pos = GameObject.Find("AppleRespawn").transform.position;
         // 출현 위치를 조정.
-        pos.y = -1.4f;
-        pos.x += Random.Range(-5.0f, 10.0f);
-        pos.z += Random.Range(-15.0f, 10.0f);
+        pos.y = -1.0f;
+        pos.x += Random.Range(1.0f, 1.0f);
+        pos.z += Random.Range(1.0f, 1.0f);
         // 사과의 위치를 이동.
         go.transform.position = pos;
     }
