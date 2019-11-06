@@ -39,14 +39,9 @@ public class Gage : MonoBehaviour
         {
             gage.value -= Time.deltaTime * 0.003f;
 
-            if (gage.value < 0.1f)
+            if(gage.value > 0.97f)
             {
-                gage.value -= Time.deltaTime * 0.1f;
-                Gage_button = true;
-            }
-            else
-            {
-                Time.timeScale = 1;
+                gage.value -= Time.deltaTime * 0.0003f;
             }
             
             if (gage.value == 0)
@@ -61,8 +56,5 @@ public class Gage : MonoBehaviour
             }
         }
     }
-    public void full_gage()
-    {
-        gage.value = 0.3f;
-    }
+   
 }

@@ -299,7 +299,7 @@ public class PlayerControl : MonoBehaviour
 
     // 트리거에 걸린 게임 오브젝트가 Item 레이어에 설정되어 있고,
     // 플레이어의 정면에 있을 때, 그 게임 오브젝트를 주목하게 한다
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         GameObject other_go = other.gameObject;
         // 트리거의 GameObject 레이어 설정이 Item이라면.

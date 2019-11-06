@@ -61,6 +61,7 @@ public class ItemRoot : MonoBehaviour
     // 초기화 작업을 시행한다.
     void Start()
     {
+        
         gage = GameObject.Find("uesr stat").GetComponent<Slider>();
         toilet = GameObject.Find("toilet").GetComponent<Slider>();
         // 메모리 영역 확보.
@@ -90,12 +91,14 @@ public class ItemRoot : MonoBehaviour
         //Image1.SetActive(true);
         TimeControl.instance.GameActive = true;
         //this.respawnPlant(); 
+        
     }
 
     // Update is called once per frame
     // 각 아이템의 타이머 값이 출현 시간을 초과하면 해당 아이템을 출현.
     void Update()
     {
+        var SeT = GameObject.Find("Player").GetComponent<Stage1Event>();
         //if(Input.GetKeyDown(KeyCode.P))
         //{
         //    Image_timer += 0.5f;
@@ -117,40 +120,45 @@ public class ItemRoot : MonoBehaviour
         //        TimeControl.instance.GameActive = true;
         //    }
         //}
-        if (TimeControl.instance.GameActive)
+        if (SeT.Time_set == true)
         {
-            time += Time.deltaTime;
-            respawn_timer_apple += Time.deltaTime;
-            respawn_timer_iron += Time.deltaTime;
-            respawn_timer_plant += Time.deltaTime;
-            Image_timer += Time.deltaTime;
-            //respawn_timer_monster += Time.deltaTime;
-            if (respawn_timer_apple > RESPAWN_TIME_APPLE)
+
+
+            if (TimeControl.instance.GameActive)
             {
-                respawn_timer_apple = 0.0f;
-                this.respawnApple(); // 사과를 출현시킨다.
+                time += Time.deltaTime;
+                respawn_timer_apple += Time.deltaTime;
+                respawn_timer_iron += Time.deltaTime;
+                respawn_timer_plant += Time.deltaTime;
+                Image_timer += Time.deltaTime;
+                //respawn_timer_monster += Time.deltaTime;
+                if (respawn_timer_apple > RESPAWN_TIME_APPLE)
+                {
+                    respawn_timer_apple = 0.0f;
+                    this.respawnApple(); // 사과를 출현시킨다.
+                }
+                if (respawn_timer_iron > RESPAWN_TIME_IRON)
+                {
+                    respawn_timer_iron = 0.0f;
+                    this.respawnIron(); // 열매를 출현시킨다.
+                }
+                if (respawn_timer_plant > RESPAWN_TIME_PLANT)
+                {
+                    respawn_timer_plant = 0.0f;
+                    this.respawnPlant(); // 광물을 출현시킨다.
+
+                }
+                //if (Image_timer >= 8.0f && Image_timer <= 8.2f)
+                //{
+                //    Image2.SetActive(true);
+                //    TimeControl.instance.GameActive = false;
+                //}
+                //if(Image_timer >= 15.0f && Image_timer <= 15.2f)
+                //{
+                //    Image3.SetActive(true);
+                //    TimeControl.instance.GameActive = false;
+                //}
             }
-            if (respawn_timer_iron > RESPAWN_TIME_IRON)
-            {
-                respawn_timer_iron = 0.0f;
-                this.respawnIron(); // 열매를 출현시킨다.
-            }
-            if (respawn_timer_plant > RESPAWN_TIME_PLANT)
-            {
-                respawn_timer_plant = 0.0f;
-                this.respawnPlant(); // 광물을 출현시킨다.
-                
-            }
-            //if (Image_timer >= 8.0f && Image_timer <= 8.2f)
-            //{
-            //    Image2.SetActive(true);
-            //    TimeControl.instance.GameActive = false;
-            //}
-            //if(Image_timer >= 15.0f && Image_timer <= 15.2f)
-            //{
-            //    Image3.SetActive(true);
-            //    TimeControl.instance.GameActive = false;
-            //}
         }
     }
 
