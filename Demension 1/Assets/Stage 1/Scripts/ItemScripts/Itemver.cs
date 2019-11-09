@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 // 본 스크립트는 아이템의 속성을 정해주는 스크립트입니다.
 // 본 스크립트는 ItemDataBase 스크립트와 연계됩니다.
@@ -12,6 +13,7 @@ using System.Collections;
 // 그냥 쓰셔요 ' ㅅ' 
 public class Itemver
 {
+    public Slider user_hp;
     public string itemName;         // 아이템의 이름
     public int itemID;              // 아이템의 고유번호
     public string itemDes;          // 아이템의 설명
@@ -20,6 +22,7 @@ public class Itemver
     public int itemSpeed;           // 아이템의 속도(공속?)
     public int itemDefense;         // 아이템의 방어력
     public int itemEvasion;         // 아이템의 회피력
+    public int itemEffect;          // 아이템 부과효과
     public ItemType itemType;       // 아이템의 속성 설정
 
     public enum ItemType            // 아이템의 속성 설정에 대한 갯수
@@ -37,7 +40,7 @@ public class Itemver
 
     }
 
-    public Itemver(string img, string name, int id, string desc, int power, int speed, int defense, int evasion, ItemType type)
+    public Itemver(string img, string name, int id, string desc, int power, int speed, int defense, int evasion,int effect, ItemType type)
     // 아이템의 필요한 속성을 모두 위에 적어줍니다.(다른곳에서 받아올 예정)
     {
         itemName = name;
@@ -52,6 +55,7 @@ public class Itemver
         itemSpeed = speed;
         itemDefense = defense;
         itemEvasion = evasion;
+        itemEffect = effect;
         itemType = type;
         // 으하하하하
     }

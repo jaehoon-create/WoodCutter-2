@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4448319949847274}
   - component: {fileID: 33203823415067178}
   - component: {fileID: 23757068068969598}
-  - component: {fileID: 136832320464605010}
   - component: {fileID: 135961679833768812}
   m_Layer: 8
   m_Name: Steak_Uncooked
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &136832320464605010
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961210883877138}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.061459653
-  m_Height: 0.016832542
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135961679833768812
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -104,5 +89,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.061459653
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}

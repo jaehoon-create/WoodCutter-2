@@ -12,7 +12,6 @@ public class Gage : MonoBehaviour
     public GameObject fail;
     public GameObject AudioSource;
     private bool Gage_button = false;
-    private float gage_Count;
     private AudioSource audio;
     public AudioClip Back_Sound;
     public AudioClip Result_s;
@@ -22,7 +21,6 @@ public class Gage : MonoBehaviour
     void Start()
     {
         gage.value = 1.0f;
-        gage_Count = 0.5f;
         fail.gameObject.SetActive(false);
         this.audio = this.gameObject.AddComponent<AudioSource>();
         toilet = GameObject.Find("toilet").GetComponent<Slider>();
@@ -37,12 +35,9 @@ public class Gage : MonoBehaviour
     {
         if (TimeControl.instance.GameActive)
         {
-            gage.value -= Time.deltaTime * 0.003f;
+            gage.value -= Time.deltaTime * 0.02f;
 
-            if(gage.value > 0.97f)
-            {
-                gage.value -= Time.deltaTime * 0.0003f;
-            }
+            
             
             if (gage.value == 0)
             {

@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     private GameStatus game_status = null;
     private AudioSource audio;
     public AudioClip effect1;
+    private int item_Steakcount;
+    private int item_Applecount;
 
     private struct Key
     { // 키 조작 정보 구조체.
@@ -66,6 +68,8 @@ public class PlayerControl : MonoBehaviour
         this.audio = this.gameObject.AddComponent<AudioSource>();
         this.audio.clip = effect1;
         this.audio.loop = false;
+        item_Steakcount = 0;
+        item_Applecount = 0;
     }
 
     // Update is called once per frame
@@ -204,7 +208,7 @@ public class PlayerControl : MonoBehaviour
         float y = Screen.height - 40.0f;
         if (this.carried_item != null)
         {
-            GUI.Label(new Rect(x, y, 200.0f, 20.0f), ".", guistyle);
+            GUI.Label(new Rect(x, y, 200.0f, 20.0f), ".sadasdasd", guistyle);
             do
             {
                 if (this.is_event_ignitable())
@@ -215,8 +219,8 @@ public class PlayerControl : MonoBehaviour
                 {
                     break;
                 }
-                GUI.Label(new Rect(x + 100.0f, y, 200.0f, 20.0f), "x:사용",
-                guistyle);
+                //GUI.Label(new Rect(x + 100.0f, y, 200.0f, 20.0f), "x:사용",
+                //guistyle);
             } while (false);
         }
         else
@@ -248,8 +252,16 @@ public class PlayerControl : MonoBehaviour
             GUI.Label(new Rect(x + 200.0f, y, 200.0f, 20.0f),
             "X:" + message, guistyle);
         }
-
-       
+        if (item_Applecount >= 1)
+        {
+            GUI.Label(new Rect(x+30, y+30, 200.0f, 20.0f), item_Applecount+ "개",
+                guistyle);
+        }
+        if (item_Steakcount >= 1)
+        {
+            GUI.Label(new Rect(x, y+30, 200.0f, 20.0f), item_Steakcount + "개",
+                guistyle);
+        }
     }
 
     // 키 입력을 조사해 그 결과를 바탕으로 맴버 변수 key의 값을 갱신한다.
@@ -303,6 +315,7 @@ public class PlayerControl : MonoBehaviour
     {
         GameObject other_go = other.gameObject;
         // 트리거의 GameObject 레이어 설정이 Item이라면.
+       
         if (other_go.layer == LayerMask.NameToLayer("Item"))
         {
             // 아무 것도 주목하고 있지 않으면.
@@ -321,6 +334,7 @@ public class PlayerControl : MonoBehaviour
                     this.closest_item = null; // 주목을 그만둔다.
                 }
             }
+            
         }
         // 트리거의 GameObject의 레이어 설정이 Event라면.
         else if (other_go.layer == LayerMask.NameToLayer("Event"))
@@ -350,12 +364,34 @@ public class PlayerControl : MonoBehaviour
             {
                 other_go.GetComponent<Crystal>().PlantGage -= 1;
                 if (other_go.GetComponent<Crystal>().PlantGage == 0)
-                    Destroy(other_go, 0.2f);
+                    Destroy(other_go);
+                
             }
 
         }
+       
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        GameObject other_go = other.gameObject;
+        if (other_go.tag == "Iron")
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                item_Steakcount++;
+                Debug.Log(item_Steakcount);
+            }
+        }
+        if (other_go.tag == "Apple")
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                item_Applecount++;
+                Debug.Log(item_Applecount);
+            }
+        }
+    }
     // 주목을 그만두게 한다.
     void OnTriggerExit(Collider other)
     {
@@ -384,9 +420,10 @@ public class PlayerControl : MonoBehaviour
                 // 들고 있는 아이템을 자신의 자식으로 설정.
                 this.carried_item.transform.parent = this.transform;
                 // 2.0f 위에 배치(머리 위로 이동).
-                this.carried_item.transform.localPosition = Vector3.up * 2.0f;
+               // this.carried_item.transform.localPosition = Vector3.up * 2.0f;
                 // 주목 중 아이템을 없앤다.
                 this.closest_item = null;
+                Destroy(carried_item);
             }
             else
             { // 들고 있는 아이템이 있을 경우.
@@ -445,5 +482,4 @@ public class PlayerControl : MonoBehaviour
         } while (false);
         return (ret);
     }
-
 }

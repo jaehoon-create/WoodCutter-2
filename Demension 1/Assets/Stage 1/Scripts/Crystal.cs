@@ -17,6 +17,7 @@ public class Crystal : MonoBehaviour {
         PlantGage = 2;
         this.audio = this.gameObject.AddComponent<AudioSource>();
         this.audio.clip = this.Effect1;
+        audio.volume = 0.1f;
     }
 
     void Update()
@@ -27,5 +28,6 @@ public class Crystal : MonoBehaviour {
 
         }
         toilet.value -= Time.deltaTime * 0.01f;
+        
     }
 }

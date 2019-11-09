@@ -14,6 +14,7 @@ TagManager:
   - GameRoot
   - Item Database
   - Waypoint
+  - NPC
   layers:
   - Default
   - TransparentFX

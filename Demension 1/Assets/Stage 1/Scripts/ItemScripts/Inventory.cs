@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Inventory : MonoBehaviour
     private int prevIndex;
     // 선택했던 아이템의 전 위치를 저장하기 위한 변수
 
+    public Slider user_HP;
+
     // Use this for initialization
     void Start()
     {
@@ -41,25 +44,25 @@ public class Inventory : MonoBehaviour
         // 디비 변수에 "Item Database" 태그를 가진 오브젝트를 연결합니다.
         // 그리고 그 중 가져오는 컴포넌트는 "itemDatabse"라는 속성입니다.
 
-       // AddItem(1001);
-        // 아이템ID를 호출하도록 한다.
-      //  AddItem(1011);
-      //  AddItem(1001);
-        // 테스트용 명령어
         AddItem(4001);
+        AddItem(1001);
+        // 아이템ID를 호출하도록 한다.
+      
+        // 테스트용 명령어
+       // AddItem(4001);
         // 물약 추가하기
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
-        // 만약 Inventory(I)버튼이 눌리면 아래 내용을 실행합니다.
-        {
-            showInventory = !showInventory;
-            // showInventory 앞에 느낌표는 낫(Not)연산자이며, 참>거짓, 거짓>참으로 바꿔주는 연산자입니다.
-            // 누를때마다 참>거짓>참>거짓으로 바뀌겠죠
-        }
-        //showInventory = true;
+        //if (Input.GetButtonDown("Inventory"))
+        //// 만약 Inventory(I)버튼이 눌리면 아래 내용을 실행합니다.
+        //{
+        //    showInventory = !showInventory;
+        //    // showInventory 앞에 느낌표는 낫(Not)연산자이며, 참>거짓, 거짓>참으로 바꿔주는 연산자입니다.
+        //    // 누를때마다 참>거짓>참>거짓으로 바뀌겠죠
+        //}
+        showInventory = true;
     }
     void OnGUI()
     {
@@ -93,7 +96,7 @@ public class Inventory : MonoBehaviour
 
             for (int i = 0; i < slotX; i++)
             {
-                Rect slotRect = new Rect(i * 52 + 100, j * 52 + 530, 50, 50);
+                Rect slotRect = new Rect(i * 52 + 110, j * 52 + 460, 50, 50);
                 // 박스 분할하기
                 GUI.Box(slotRect, "", skin.GetStyle("slot background"));
                 // 각 박스의 생성 위치를 설정해주는 곳입니다. skin.GetStyle은 이전에 만들었던 skin을 불러오는 것임
@@ -146,18 +149,24 @@ public class Inventory : MonoBehaviour
                                 {
                                     case 4001:
                                         // 4001은 힐링포션
-                                        Debug.Log("heal +50");
+                                        user_HP.value += 0.06f;
+                                        Debug.Log("heal +30");
                                         break;
                                     case 4011:
                                         // 4011은 시야 포션
                                         Debug.Log("increase sight + 1");
+                                        break;
+                                    case 1001:
+                                        user_HP.value += 0.03f;
+                                        Debug.Log("heal +60");
                                         break;
                                     default:
                                         // 그 밖의 use 아이템은 아직 활성화가 안됨
                                         Debug.Log("I don't know, what is use this?");
                                         break;
                                 }
-                                inventory[k] = new Itemver();
+                                //inventory[k] = new Itemver();
+                                
                             }
                         }
                     }
@@ -190,8 +199,7 @@ public class Inventory : MonoBehaviour
 
     string CreateTooltip(Itemver item)
     {
-        tooltip = "Item name: <color=#a10000><b>" + item.itemName + "</b></color>\nItem Damage: <color=#ffffff>" + item.itemPower + "</color>\nItem Speed: <color=#ffffff>" + item.itemSpeed + "</color>";
-        /* html 태그가 어느정도 먹힘
+        tooltip = "Item name: <color=#a10000><b>" + item.itemName + "</b></color>\nItem +HP: <color=#ffffff>" + item.itemEffect + "</color>\nItem Speed: <color=#ffffff>" + item.itemSpeed + "</color>";        /* html 태그가 어느정도 먹힘
          * <color=#000000> 말 </color>
          * <b> 두껍게 </b>
          * ... emdemdemd
